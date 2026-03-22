@@ -167,7 +167,7 @@ impl fmt::Display for DataBits {
 impl FromStr for DataBits {
     type Err = ();
 
-    fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         match s {
             "Five" | "five" | "5" => Ok(Self::Five),
             "Six" | "six" | "6" => Ok(Self::Six),
@@ -273,7 +273,7 @@ impl fmt::Display for StopBits {
 impl FromStr for StopBits {
     type Err = ();
 
-    fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         match s {
             "One" | "one" | "1" => Ok(Self::One),
             "Two" | "two" | "2" => Ok(Self::Two),
