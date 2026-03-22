@@ -192,7 +192,7 @@ impl From<DataBits> for u8 {
 impl TryFrom<u8> for DataBits {
     type Error = ();
 
-    fn try_from(value: u8) -> core::result::Result<Self, Self::Error> {
+    fn try_from(value: u8) -> std::result::Result<Self, Self::Error> {
         match value {
             5 => Ok(Self::Five),
             6 => Ok(Self::Six),
@@ -294,7 +294,7 @@ impl From<StopBits> for u8 {
 impl TryFrom<u8> for StopBits {
     type Error = ();
 
-    fn try_from(value: u8) -> core::result::Result<Self, Self::Error> {
+    fn try_from(value: u8) -> std::result::Result<Self, Self::Error> {
         match value {
             1 => Ok(Self::One),
             2 => Ok(Self::Two),
@@ -330,7 +330,7 @@ impl fmt::Display for FlowControl {
 impl FromStr for FlowControl {
     type Err = ();
 
-    fn from_str(s: &str) -> core::result::Result<Self, Self::Err> {
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         match s {
             "None" | "none" | "n" => Ok(FlowControl::None),
             "Software" | "software" | "SW" | "sw" | "s" => Ok(FlowControl::Software),
